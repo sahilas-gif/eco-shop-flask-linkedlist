@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Eco Shopping System</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="header">
+<h1>🌿 Eco-Friendly Shopping Store</h1>
+<p>Sustainable Products for a Better Future</p>
+</div>
+
+<div class="main-container">
+<div class="product-section">
+<h2>Featured Products</h2>
+
+<div class="slider-container">
+<button class="nav-btn left-btn" onclick="moveSlider(-1)">&#10094;</button>
+
+<div class="slider-track" id="slider-track">
+{% for p in products %}
+<div class="card">
+<img src="/static/images/{{ p.image }}" alt="{{ p.name }}" class="product-img">
+
+<h3>{{ p.name }}</h3>
+<p class="price">₹{{ p.price }}</p>
+<button class="add-btn" onclick="addToCart('{{ p.name }}', {{ p.price }})">Add to Cart</button>
+</div>
+{% endfor %}
+</div>
+
+<button class="nav-btn right-btn" onclick="moveSlider(1)">&#10095;</button>
+</div>
+</div>
+
+<div class="cart-sidebar">
+<h2>🛒 Your Cart</h2>
+<div class="cart-items-container">
+<ul id="cart-list">
+</ul>
+</div>
+<h3 id="total-display">Total: ₹0</h3>
+
+<hr>
+<button class="checkout-btn trigger-btn" onclick="openCheckoutModal()">Review & Checkout</button>
+</div>
+</div>
+
+<div id="checkout-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal()">&times;</span>
+<h2>Order Summary</h2>
+
+<div id="modal-summary-list"></div>
+
+<h3 id="modal-total-bill" style="text-align: right; color: #2e7d32;"></h3>
+
+<hr>
+<label for="c_name">Final Step: Enter Name to Confirm</label>
+<input type="text" id="c_name" placeholder="Customer Name e.g., Rahul">
+
+<button class="confirm-btn" onclick="confirmCheckout()">Confirm & Pay</button>
+</div>
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
