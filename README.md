@@ -4,13 +4,13 @@ Hey! This is my full-stack web development project. It's an e-commerce store for
 
 The cool part about this project is that I didn't just use a standard list for the shopping cart—I implemented a **Linked List** from scratch to handle the cart logic (adding items, calculating totals, etc.).
 
-## 🚀 Features
+## Features
 * **Product Page:** Browse eco-friendly items in a grid layout.
 * **Smart Cart:** Uses a custom Linked List data structure to manage your items in memory.
 * **Database Integration:** When you checkout, your order is actually saved to a local PostgreSQL database.
 * **REST API:** The frontend talks to the backend using JSON.
 
-## 🛠️ Tech Stack
+## Tech Stack
 * **Language:** Python
 * **Framework:** Flask
 * **Database:** PostgreSQL (using `psycopg2`)
@@ -18,7 +18,7 @@ The cool part about this project is that I didn't just use a standard list for t
 
 ---
 
-## ⚙️ How to Run This on Your Machine
+## How to Run This on Your Machine
 
 ### 1. Download the code
 Clone this repo or download the zip file and extract it.
